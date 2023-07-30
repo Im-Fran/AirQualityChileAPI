@@ -1,6 +1,7 @@
 import express from 'express'
 import dotenv from 'dotenv'
 import axios from 'axios'
+import morgan from 'morgan'
 import * as https from "https";
 import * as cheerio from 'cheerio'
 
@@ -11,7 +12,7 @@ const httpsAgent = new https.Agent({
 });
 const app = express()
 const port = process.env.PORT || '3000'
-
+app.use(morgan('dev'))
 app.get('/', async (req, res) => {
     try {
         const { data } = await axios.get('https://airechile.mma.gob.cl', {
