@@ -22,7 +22,7 @@ const cache: {
 app.use(morgan('dev'))
 app.get('/', async (req, res) => {
     cache.main = cache.main || {
-        lastRequest: new Date().getTime(),
+        lastRequest: 0,
     }
 
     if((cache.main.lastRequest + 21600000) > new Date().getTime()){
@@ -61,7 +61,7 @@ app.get('/', async (req, res) => {
 
 app.get('/medidas/:city', async (req, res) => {
     cache[req.params.city] = cache[req.params.city] || {
-        lastRequest: new Date().getTime(),
+        lastRequest: 0,
     }
 
     if((cache[req.params.city].lastRequest + 21600000) > new Date().getTime()){
