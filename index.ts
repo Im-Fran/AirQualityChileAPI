@@ -12,7 +12,12 @@ const httpsAgent = new https.Agent({
 });
 const app = express()
 const port = process.env.PORT || '3000'
-const cache = {}
+const cache: {
+    [key: string]: {
+        lastRequest: number,
+        data?: any,
+    }
+} = {}
 
 app.use(morgan('dev'))
 app.get('/', async (req, res) => {
