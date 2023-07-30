@@ -12,8 +12,18 @@ const httpsAgent = new https.Agent({
 });
 const app = express()
 const port = process.env.PORT || '3000'
+const cache = {}
+
 app.use(morgan('dev'))
 app.get('/', async (req, res) => {
+    cache.main = cache.main || {
+        lastRequest: new Date().getTime(),
+    }
+
+    if((cache.main.lastRequest + 21600000) > new Date().getTime()){
+        return res.status(200).json(cache.main.data)
+    }
+
     try {
         const { data } = await axios.get('https://airechile.mma.gob.cl', {
             httpsAgent
@@ -32,7 +42,11 @@ app.get('/', async (req, res) => {
                 },
             })
         })
-        
+
+        cache.main = {
+            lastRequest: new Date().getTime(),
+            data: response,
+        }
         res.status(200).json(response)
     } catch (error){
         console.debug({ error })
@@ -41,6 +55,14 @@ app.get('/', async (req, res) => {
 })
 
 app.get('/medidas/:city', async (req, res) => {
+    cache[req.params.city] = cache[req.params.city] || {
+        lastRequest: new Date().getTime(),
+    }
+
+    if((cache[req.params.city].lastRequest + 21600000) > new Date().getTime()){
+        return res.status(200).json(cache[req.params.city].data)
+    }
+
     try {
         const { city } = req.params
         const { data } = await axios.get(`https://airechile.mma.gob.cl/comunas/${city}`, {
@@ -56,6 +78,10 @@ app.get('/medidas/:city', async (req, res) => {
             })
         });
 
+        cache[req.params.city] = {
+            lastRequest: new Date().getTime(),
+            data: response,
+        }
         res.status(200).json(response)
     } catch (error){
         console.debug({ error })
