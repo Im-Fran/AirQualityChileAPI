@@ -172,21 +172,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"AirQualityChileAPI@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "AirQualityChileAPI@workspace:."
-  dependencies:
-    "@types/express": ^4.17.17
-    "@types/node": ^20.4.5
-    axios: ^1.4.0
-    cheerio: ^1.0.0-rc.12
-    dotenv: ^16.3.1
-    express: ^4.18.2
-    ts-node: ^10.9.1
-    typescript: ^5.1.6
-  languageName: unknown
-  linkType: soft
-
 "accepts@npm:~1.3.8":
   version: 1.3.8
   resolution: "accepts@npm:1.3.8"
@@ -212,6 +197,21 @@ __metadata:
   checksum: 538ba38af0cc9e5ef983aee196c4b8b4d87c0c94532334fa7e065b2c8a1f85863467bb774231aae91613fcda5e68740c15d97b1967ae3394d20faddddd8af61d
   languageName: node
   linkType: hard
+
+"airqualitychile-api@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "airqualitychile-api@workspace:."
+  dependencies:
+    "@types/express": ^4.17.17
+    "@types/node": ^20.4.5
+    axios: ^1.4.0
+    cheerio: ^1.0.0-rc.12
+    dotenv: ^16.3.1
+    express: ^4.18.2
+    ts-node: ^10.9.1
+    typescript: ^5.1.6
+  languageName: unknown
+  linkType: soft
 
 "arg@npm:^4.1.0":
   version: 4.1.3

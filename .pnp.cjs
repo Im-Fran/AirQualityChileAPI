@@ -12,14 +12,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
     ],\
     "dependencyTreeRoots": [\
       {\
-        "name": "AirQualityChileAPI",\
+        "name": "airqualitychile-api",\
         "reference": "workspace:."\
       }\
     ],\
     "enableTopLevelFallback": true,\
     "ignorePatternData": "(^(?:\\\\.yarn\\\\/sdks(?:\\\\/(?!\\\\.{1,2}(?:\\\\/|$))(?:(?:(?!(?:^|\\\\/)\\\\.{1,2}(?:\\\\/|$)).)*?)|$))$)",\
     "fallbackExclusionList": [\
-      ["AirQualityChileAPI", ["workspace:."]]\
+      ["airqualitychile-api", ["workspace:."]]\
     ],\
     "fallbackPool": [\
     ],\
@@ -34,7 +34,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["cheerio", "npm:1.0.0-rc.12"],\
             ["dotenv", "npm:16.3.1"],\
             ["express", "npm:4.18.2"],\
-            ["ts-node", "virtual:3884328a36c33c5665fdc1174e3a4efc72736a363f7bed779863d08f079931a207ecac4733a8986273687278259a6261154f5e80f7d0ced3e2076d41b90fd4a5#npm:10.9.1"],\
+            ["ts-node", "virtual:ea14e961607c22303690a60b4bd299227e35d362de93347ea6584877e30739f336f75abccd70072b47741e0f535ed16ac8d0554df5c337018ac7bbc941862bb5#npm:10.9.1"],\
             ["typescript", "patch:typescript@npm%3A5.1.6#~builtin<compat/typescript>::version=5.1.6&hash=5da071"]\
           ],\
           "linkType": "SOFT"\
@@ -237,23 +237,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
-      ["AirQualityChileAPI", [\
-        ["workspace:.", {\
-          "packageLocation": "./",\
-          "packageDependencies": [\
-            ["AirQualityChileAPI", "workspace:."],\
-            ["@types/express", "npm:4.17.17"],\
-            ["@types/node", "npm:20.4.5"],\
-            ["axios", "npm:1.4.0"],\
-            ["cheerio", "npm:1.0.0-rc.12"],\
-            ["dotenv", "npm:16.3.1"],\
-            ["express", "npm:4.18.2"],\
-            ["ts-node", "virtual:3884328a36c33c5665fdc1174e3a4efc72736a363f7bed779863d08f079931a207ecac4733a8986273687278259a6261154f5e80f7d0ced3e2076d41b90fd4a5#npm:10.9.1"],\
-            ["typescript", "patch:typescript@npm%3A5.1.6#~builtin<compat/typescript>::version=5.1.6&hash=5da071"]\
-          ],\
-          "linkType": "SOFT"\
-        }]\
-      ]],\
       ["accepts", [\
         ["npm:1.3.8", {\
           "packageLocation": "./.yarn/cache/accepts-npm-1.3.8-9a812371c9-50c43d32e7.zip/node_modules/accepts/",\
@@ -281,6 +264,23 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["acorn-walk", "npm:8.2.0"]\
           ],\
           "linkType": "HARD"\
+        }]\
+      ]],\
+      ["airqualitychile-api", [\
+        ["workspace:.", {\
+          "packageLocation": "./",\
+          "packageDependencies": [\
+            ["airqualitychile-api", "workspace:."],\
+            ["@types/express", "npm:4.17.17"],\
+            ["@types/node", "npm:20.4.5"],\
+            ["axios", "npm:1.4.0"],\
+            ["cheerio", "npm:1.0.0-rc.12"],\
+            ["dotenv", "npm:16.3.1"],\
+            ["express", "npm:4.18.2"],\
+            ["ts-node", "virtual:ea14e961607c22303690a60b4bd299227e35d362de93347ea6584877e30739f336f75abccd70072b47741e0f535ed16ac8d0554df5c337018ac7bbc941862bb5#npm:10.9.1"],\
+            ["typescript", "patch:typescript@npm%3A5.1.6#~builtin<compat/typescript>::version=5.1.6&hash=5da071"]\
+          ],\
+          "linkType": "SOFT"\
         }]\
       ]],\
       ["arg", [\
@@ -1160,10 +1160,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "linkType": "SOFT"\
         }],\
-        ["virtual:3884328a36c33c5665fdc1174e3a4efc72736a363f7bed779863d08f079931a207ecac4733a8986273687278259a6261154f5e80f7d0ced3e2076d41b90fd4a5#npm:10.9.1", {\
-          "packageLocation": "./.yarn/__virtual__/ts-node-virtual-6840d3c0bd/0/cache/ts-node-npm-10.9.1-6c268be7f4-090adff130.zip/node_modules/ts-node/",\
+        ["virtual:ea14e961607c22303690a60b4bd299227e35d362de93347ea6584877e30739f336f75abccd70072b47741e0f535ed16ac8d0554df5c337018ac7bbc941862bb5#npm:10.9.1", {\
+          "packageLocation": "./.yarn/__virtual__/ts-node-virtual-287a015d23/0/cache/ts-node-npm-10.9.1-6c268be7f4-090adff130.zip/node_modules/ts-node/",\
           "packageDependencies": [\
-            ["ts-node", "virtual:3884328a36c33c5665fdc1174e3a4efc72736a363f7bed779863d08f079931a207ecac4733a8986273687278259a6261154f5e80f7d0ced3e2076d41b90fd4a5#npm:10.9.1"],\
+            ["ts-node", "virtual:ea14e961607c22303690a60b4bd299227e35d362de93347ea6584877e30739f336f75abccd70072b47741e0f535ed16ac8d0554df5c337018ac7bbc941862bb5#npm:10.9.1"],\
             ["@cspotcode/source-map-support", "npm:0.8.1"],\
             ["@swc/core", null],\
             ["@swc/wasm", null],\
